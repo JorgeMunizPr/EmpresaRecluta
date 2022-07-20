@@ -1,0 +1,66 @@
+/*2/julio/2022*/
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #adadad;
+}
+
+/*la clase center es la referencia al elemento que contiene todo el formulario incluyendo el titulo(login)*/
+/*top y botton de 50% para centrarlo, anchura de 400 pixeles, orilla de 10px para efecto ovalado*********/
+/*
+.center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+*/
+
+/*tabla: posicion en la pagina, fondo blanco*/
+table
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+/*Boton "agregar": posicion, anchura, altura, color de letra*/
+button
+{
+    position: absolute;
+    top: 28%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 34px;
+    color: #000;
+}
+
+/*Alineamos el texto del encabezado a la izquierda*/
+th
+{
+    text-align: left;
+}
+
+/*Diseño de divisiones de celdas de la tabla*/
+table, th, td
+{
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+/*Relleno y altura de cada celda*/
+th, td
+{
+    padding: 6px 6px;
+    height: 34px;
+}
+
+

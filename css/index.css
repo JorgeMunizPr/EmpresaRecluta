@@ -1,0 +1,88 @@
+/*1/julio/2022*/
+/*Body(el cuerpo de la pagina):margen y relleno del elemento en 0 para abarcar totalidad de pantalla, la altura seria la totalidad de la pantalla,
+ verticalmente, 100vh(viewport height) y color de fondo gris*/
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #adadad;
+}
+
+/*la clase center es la referencia al elemento que contiene todo el formulario incluyendo el titulo(login)*/
+/*top y botton de 50% para centrarlo, anchura de 400 pixeles, orilla de 10px para efecto ovalado*********/
+.center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+
+/*El encabezado(login) lo centramos y con el padding lo separamos unos 20px del formulario y con border-bottom generamos una linea divisora plateada*/
+.center h1
+{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+/*Separamos el formulario de la linea divisora suoerior, con el padding*/
+.center form
+{
+    padding: 0 40px;
+    
+}
+
+/*Las divisiones donde se anidan los inputs tendran una linea gris abajo, y margen de 30px a la izquierda, relativo al elemento donde se anida*/
+form .txt_field
+{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+/*Recuadros de entrada de informacion(inputs) con anchura completa de su padre, relleno superior de 5px, altura de 40px, tamaño de letra de 16px, bordes, fondo y resaltado transparentes*/
+.txt_field input
+{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/*Boton de ingresar con altura de 50px, fondo azul, letras color blanco, grosor de letra de 700, el cursor al pasar encima de el lo apuntara*/
+input[type="submit"]
+{
+    width: 100%;
+    height: 50px;
+    border:  1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+/*hover permite que el puntero al flotar encima del elemento (input submit) active los atributos indicados dentro de las corchetas*/
+/*El puntero al pasar encima hara que el los bordes del boton sean de color azul, en una transicion de .5 segundos*/
+input[type="submit"]:hover
+{
+    border-color: #2691d9;
+    transition: .5s;
+}
+
+
+
+
+
+
+
