@@ -23,26 +23,11 @@ body
 
 /*tabla: posicion en la pagina, fondo blanco*/
 table
-{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+{   
     background: white;
 }
 
 /*Boton "agregar": posicion, anchura, altura, color de letra*/
-button
-{
-    position: absolute;
-    top: 28%;
-    left: 85%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 34px;
-    color: #000;
-}
-
 /*Alineamos el texto del encabezado a la izquierda*/
 th
 {

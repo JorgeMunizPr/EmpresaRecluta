@@ -7,32 +7,33 @@
     </head>
     <!--Cuerpo de la pagina-->
     <body>
-    <?php
-       include('Componentes/Menu.php');
-
-       $sql = 'SELECT nom_empr, metas_mes FROM empresas';
-       
-       include('Componentes/Connect.php');
-       ?>
+        <?php
+            include('Componentes/Menu.php');
+        ?>
         <div class="center">
-            <table>
-                <tr>
-                    <th>Empresa</th>
-                    <th>Metas x Mes</th>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    
-                </tr>
-                <?php while ($row =$q ->fetch()): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['nom_empr'])?></td>
-                    <td><?php echo htmlspecialchars($row['metas_mes'])?></td>
-                </tr>
-                <?php endwhile; ?>
-            </table>
-            <button>Guardar</button>
+            <div class="Secccion Contiene-Nuevo">
+                <table>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Metas x Mes</th>
+                        <th></th>
+                    </tr>
+                    <form action="">
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="submit" name="brn-atc" value="Agregar +"></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+            <div class="Secccion Contiene-Busqueda">
+                <?php include('Componentes/busqueda.php');?>
+            </div>
+            <div class="Secccion Contiene-Resultados">
+                <?php include('Vista/metasResultado.php');?>
+            </div>
+            <!--Boton para mandar la informacion ingresada en la tabla, al servidor para asi registrarla-->
         </div>
     </body>
 </html>
