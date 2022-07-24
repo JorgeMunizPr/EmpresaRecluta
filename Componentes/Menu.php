@@ -1,5 +1,4 @@
 <!--10/07/2022-->
-<!--Algoritmo para que php sepa en que seccion del menu estamos-->
 <?php 
 $directoryURI = $_SERVER['REQUEST_URI'];
 
@@ -8,7 +7,8 @@ $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 $first_part = $components[sizeof($components)-1];
 ?>
-<link rel="stylesheet" href="css/menu.css"><!--Conexion con archivo css para dar diseño al html-->
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/principal.css">
 <!--Division del menu de navegacion superior-->
 <!--Asiganar class a los elementos sirve para identificarlos en el css y poder dar un diseño especifico-->
 <div class="menu-bar">

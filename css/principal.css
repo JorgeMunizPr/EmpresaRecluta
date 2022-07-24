@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Secccion {
+    padding: 18px 0;
+}

@@ -9,10 +9,6 @@ body
 /*tabla: posicion en la pagina, fondo blanco*/
 table
 {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
 }
 
