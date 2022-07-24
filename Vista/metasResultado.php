@@ -8,7 +8,7 @@ if(isset($_GET['nombre'])){
     $cDatos = new metasDatos();
     $ResultadoBusqueda = $cDatos->BuscaMeta($NombreBuscado);
     if($ResultadoBusqueda=='Vacio'){
-        $HtmlResultado = 'No se encontraron resultados';
+        $HtmlResultado = '<span class= "badge bg-primary">No se encontraron resultados</span>';
     }
     else{
         $HtmlResultado = $HtmlResultado.'
@@ -23,11 +23,11 @@ if(isset($_GET['nombre'])){
             $HtmlResultado = $HtmlResultado.'
             <tr>
                 <td>'.$NombreEmpresa.'</td>
-                <td><input type="text" maxlength=40 name="MetasMes" value="'.$MetasMes.'" required></td>
+                <td><input class="form-control" type="text" maxlength=40 name="MetasMes" value="'.$MetasMes.'" required></td>
                 <td>
-                    <input type="hidden" name="IdMeta" value="'.$IdMeta.'">                    
-                    <input type="submit" name="Guardar" value="Guardar">
-                    <input type="submit" name="Borrar" value="Eliminar">
+                    <input class="btn btn-primary" type="hidden" name="IdMeta" value="'.$IdMeta.'">                    
+                    <input class="btn btn-primary" type="submit" name="Guardar" value="Guardar">
+                    <input class="btn btn-primary" type="submit" name="Borrar" value="Eliminar">
                 </td>
             </tr>';
             
@@ -44,7 +44,7 @@ elseif(isset($_POST['Guardar'])){
     $DatosMeta = new metasDatos();
     $Resultado = $DatosMeta->ActualizaMeta($IdMeta, $MetasMes);
     if($Resultado==1){
-        echo 'Registro Actualizado';
+        echo '<span class= "badge bg-success">Registro Actualizado</span>';
     }
 }
 elseif(isset($_POST['Borrar'])){
@@ -52,6 +52,6 @@ elseif(isset($_POST['Borrar'])){
     $DatosMeta = new metasDatos();
     $Resultado = $DatosMeta->EliminaMeta($IdMeta);
     if($Resultado==1){
-        echo 'Se elimino el registro de la metas';
+        echo '<span class= "badge bg-danger">Se elimino el registro de la metas</span>';
     }
 }

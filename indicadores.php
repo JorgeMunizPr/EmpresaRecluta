@@ -3,7 +3,7 @@
     <head>
         <!--Titulo de la pestaña--> 
         <title>Indicadores</title>
-        <link rel="stylesheet" href="css/indicadores.css"><!--Conexion con archivo css para dar diseño al html-->
+        
     </head>
     <!--Cuerpo de la pagina-->
     <body>

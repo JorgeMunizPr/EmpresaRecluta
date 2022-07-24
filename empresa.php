@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Empresa</title>
-        <link rel="stylesheet" href="css/empresa.css"><!--Conexion con archivo css para dar diseño al html-->
     </head>
     <body>
        <?php 
@@ -17,7 +16,6 @@
             <div class="Secccion Contiene-Resultados">
                 <?php include('Vista/empresaResultado.php');?>
             </div>
-            <!--Boton para mandar la informacion ingresada en la tabla, al servidor para asi registrarla-->
         </div>
     </body>
 </html>

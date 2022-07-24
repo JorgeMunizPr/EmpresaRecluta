@@ -3,7 +3,7 @@
     <head>
         <!--Titulo de la pestaña-->
         <title>Reclutas</title>
-        <link rel="stylesheet" href="css/reclutas.css"><!--Conexion con archivo css para dar diseño al html-->
+       
     </head>
     <!--Cuerpo de la pagina-->
     <body>

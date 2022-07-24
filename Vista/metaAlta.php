@@ -7,10 +7,10 @@ if(isset($_POST['AgregaMeta'])){
     $DatosMeta = new metasDatos();
     $Resultado = $DatosMeta->AgregaMeta($IdEmpresa, $MetasMes);
     if($Resultado==1){
-        $RespuestaAlta = 'Meta registrada';
+        $RespuestaAlta = '<span class= "badge bg-success">Meta registrada</span>';
     }
     else if($Resultado==2){
-        $RespuestaAlta = 'Ya existe una meta para esta empresa';
+        $RespuestaAlta = '<span class= "badge bg-primary">Ya existe una meta para esta empresa</span>';
     }
     tablaAltaMeta($RespuestaAlta);
 }
@@ -42,8 +42,8 @@ function tablaAltaMeta($RespuestaAlta=''){
                 $HtmlResultado=$HtmlResultado.
                 '</select>
                 </td>
-                <td><input type="text" maxlength=40 name="MetasMes"></td>
-                <td><input type="submit" name="AgregaMeta" value="Agregar +"></td>
+                <td><input class="form-control" type="text" maxlength=40 name="MetasMes"></td>
+                <td><input class="btn btn-primary" type="submit" name="AgregaMeta" value="Agregar +"></td>
             </tr>
         </form>
     </table>

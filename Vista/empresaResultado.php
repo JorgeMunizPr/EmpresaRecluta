@@ -7,11 +7,11 @@ if(isset($_GET['nombre'])){
     $DatosEmpresa = new empresaDatos();
     $ResultadoBusqueda = $DatosEmpresa->BuscaEmpresa($NombreBuscado);
     if($ResultadoBusqueda=='Vacio'){
-        $HtmlResultado = 'No se encontraron resultados';
+        $HtmlResultado = '<span class= "badge bg-primary">No se encontraron resultados</span>';
     }
     else{
         $HtmlResultado = $HtmlResultado.'
-        <form method="post">
+        <form method="post" action="empresa.php">
             <table><tr><th>Empresa</th><th>Correo Electronico</th><th></th></tr>';
         for ($i=0; $i < sizeof($ResultadoBusqueda); $i++) { 
             $IdEmpresa = $ResultadoBusqueda[$i]['id_empresa'];
@@ -20,12 +20,12 @@ if(isset($_GET['nombre'])){
 
             $HtmlResultado = $HtmlResultado.'
             <tr>
-                <td><input type="text" maxlength=45 name="NombreEmpresa" value="'.$NombreEmpresa.'" required></td>
-                <td><input type="text" maxlength=50 name="Email" value="'.$Email.'" required></td>
+                <td><input class="form-control" type="text" maxlength=45 name="NombreEmpresa" value="'.$NombreEmpresa.'" required></td>
+                <td><input class="form-control" type="text" maxlength=50 name="Email" value="'.$Email.'" required></td>
                 <td>
-                    <input type="hidden" name="IdEmpresa" value="'.$IdEmpresa.'">                    
-                    <input type="submit" name="Guardar" value="Guardar">
-                    <input type="submit" name="Borrar" value="Eliminar">
+                    <input class="btn btn-primary" type="hidden" name="IdEmpresa" value="'.$IdEmpresa.'">                    
+                    <input class="btn btn-primary" type="submit" name="Guardar" value="Guardar">
+                    <input class="btn btn-primary" type="submit" name="Borrar" value="Eliminar">
                 </td>
             </tr>';
             
@@ -42,7 +42,7 @@ else if(isset($_POST['Guardar'])){
     $DatosEmpresa = new empresaDatos();
     $Resultado = $DatosEmpresa->ActualizaEmpresa($IdEmpresa, $NombreEmpresa, $Email);
     if($Resultado==1){
-        echo 'Registro Actualizado';
+        echo '<span class= "badge bg-success">Registro Actualizado</span>';
     }
 }
 else if(isset($_POST['Borrar'])){
@@ -50,7 +50,7 @@ else if(isset($_POST['Borrar'])){
     $DatosEmpresa = new empresaDatos();
     $Resultado = $DatosEmpresa->EliminaEmpresa($IdEmpresa);
     if($Resultado==1){
-        echo 'Se elimino el registro de la empresa, sus reclutas y metas';
+        echo '<span class= "badge bg-danger">Se elimino el registro de la empresa, sus reclutas y metas</span>';
     }
 }
 

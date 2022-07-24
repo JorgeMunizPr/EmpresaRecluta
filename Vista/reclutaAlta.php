@@ -9,10 +9,10 @@ if(isset($_POST['AgregaRecluta'])){
     $DatosRecluta = new reclutasDatos();
     $Resultado = $DatosRecluta->AgregaRecluta($NombreRecluta, $IdEmpresa, $Telefono, $Puesto);
     if($Resultado==1){
-        $RespuestaAlta = 'Recluta registrado';
+        $RespuestaAlta = '<span class= "badge bg-success">Recluta registrado</span>';
     }
     else if($Resultado==2){
-        $RespuestaAlta = 'Ya existe una recluta registrado con ese nombre.';
+        $RespuestaAlta = '<span class= "badge bg-primary">Ya existe una recluta registrado con ese nombre.</span>';
     }
     tablaAltaRecluta($RespuestaAlta);
 }
@@ -36,7 +36,7 @@ function tablaAltaRecluta($RespuestaAlta=''){
         </tr>
         <form method="POST">
         <tr>
-            <td><input type="text" maxlength=40 name="NombreRecluta" required></td>';
+            <td><input class="form-control" type="text" maxlength=40 name="NombreRecluta" required></td>';
             $HtmlResultado=$HtmlResultado.'<td>
             <select name="IdEmpresa">';
             for ($i=0; $i < sizeof($aListaEmpresas); $i++) {  
@@ -48,9 +48,9 @@ function tablaAltaRecluta($RespuestaAlta=''){
             '</select>
             </td>';
             $HtmlResultado=$HtmlResultado.
-            '<td><input type="text" maxlength=10 name="Telefono" pattern="[0-9]{10}" required placeholder="10 digitos" required></td>
-            <td><input type="text" maxlength=30 name="Puesto" required></td>
-            <td><input type="submit" name="AgregaRecluta" value="Agregar +"></td>
+            '<td><input class="form-control" type="text" maxlength=10 name="Telefono" pattern="[0-9]{10}" required placeholder="10 digitos" required></td>
+            <td><input class="form-control" type="text" maxlength=30 name="Puesto" required></td>
+            <td><input class="btn btn-primary" type="submit" name="AgregaRecluta" value="Agregar +"></td>
         </tr>
         </form>
     </table>

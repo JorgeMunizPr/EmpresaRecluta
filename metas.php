@@ -3,7 +3,7 @@
     <head>
         <!--Titulo de la pestaña--> 
         <title>Metas</title>
-        <link rel="stylesheet" href="css/metas.css"><!--Conexion con archivo css para dar diseño al html-->
+        
     </head>
     <!--Cuerpo de la pagina-->
     <body>

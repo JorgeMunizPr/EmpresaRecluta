@@ -6,10 +6,10 @@ if(isset($_POST['AgregaEmpresa'])){
     $DatosEmpresa = new empresaDatos();
     $Resultado = $DatosEmpresa->AgregaEmpresa($NombreEmpresa, $Email);
     if($Resultado==1){
-        $RespuestaAlta = 'Empresa registrada';
+        $RespuestaAlta = '<span class= "badge bg-success">Empresa registrada</span>';
     }
     else if($Resultado==2){
-        $RespuestaAlta = 'Ya existe una empresa registrada con ese nombre';
+        $RespuestaAlta = '<span class= "badge bg-primary">Ya existe una empresa registrada con ese nombre</span>';
     }
     tablaAltaEmpresa($RespuestaAlta);
 }
@@ -29,9 +29,9 @@ function tablaAltaEmpresa($RespuestaAlta=''){
         </tr>
         <form method="POST">
         <tr>
-            <td><input type="text" maxlength=45 name="NombreEmpresa" required></td>
-            <td><input type="text" maxlength=50 name="Email" required></td>
-            <td><input type="submit" name="AgregaEmpresa" value="Agregar +"></td>
+            <td><input class="form-control" type="text" maxlength=45 name="NombreEmpresa" required></td>
+            <td><input class="form-control" type="text" maxlength=50 name="Email" required></td>
+            <td><input class="btn btn-primary" type="submit" name="AgregaEmpresa" value="Agregar +"></td>
         </tr>
         </form>
     </table>
