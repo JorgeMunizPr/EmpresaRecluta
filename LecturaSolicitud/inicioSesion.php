@@ -20,13 +20,15 @@ function validaInicioSesion($Usuario, $ContraS){
     
     $conn = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8mb4", $userName, $passUser);
     
-    $Query ="select id_usuario from usuarios where usuario='$Usuario' and contrasena='$ContraS';";
+    $Query ="select id_usuario, contrasena from usuarios where usuario='$Usuario';";
     $resultusuario = $conn->query($Query);
     $InfoUsuario = $resultusuario->fetch(PDO::FETCH_ASSOC);
 
     $IdUsuario = $InfoUsuario['id_usuario'];
+    $ContraHash = $InfoUsuario['contrasena'];
+    $Validacion = password_verify($ContraS, $ContraHash);
 
-    if(isset($IdUsuario)){//si existe valor en la lecutura
+    if(isset($IdUsuario) && $Validacion){//si existe valor en la lecutura
         $nombreSession = "sesionReclutas";
         session_name($nombreSession);
         session_start();

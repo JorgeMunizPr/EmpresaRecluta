@@ -1,7 +1,5 @@
 <?php
-
-include('LecturaSolicitud/empresasSolicitud.php');
-
+require_once('LecturaSolicitud/empresasSolicitud.php');
 
 if(isset($_GET['nombre'])){
     $HtmlResultado='';
@@ -13,7 +11,7 @@ if(isset($_GET['nombre'])){
     }
     else{
         $HtmlResultado = $HtmlResultado.'
-        <form method="post" action="empresa.php">
+        <form method="post">
             <table><tr><th>Empresa</th><th>Correo Electronico</th><th></th></tr>';
         for ($i=0; $i < sizeof($ResultadoBusqueda); $i++) { 
             $IdEmpresa = $ResultadoBusqueda[$i]['id_empresa'];
@@ -22,8 +20,8 @@ if(isset($_GET['nombre'])){
 
             $HtmlResultado = $HtmlResultado.'
             <tr>
-                <td><input type="text" name="NombreEmpresa" value="'.$NombreEmpresa.'"></td>
-                <td><input type="text" name="Email" value="'.$Email.'"></td>
+                <td><input type="text" maxlength=45 name="NombreEmpresa" value="'.$NombreEmpresa.'" required></td>
+                <td><input type="text" maxlength=50 name="Email" value="'.$Email.'" required></td>
                 <td>
                     <input type="hidden" name="IdEmpresa" value="'.$IdEmpresa.'">                    
                     <input type="submit" name="Guardar" value="Guardar">
@@ -37,12 +35,22 @@ if(isset($_GET['nombre'])){
     echo $HtmlResultado;
 
 }
-elseif(isset($_POST['Guardar'])){
-    echo 'Guardar';
+else if(isset($_POST['Guardar'])){
+    $IdEmpresa = $_POST['IdEmpresa'];
+    $NombreEmpresa = $_POST['NombreEmpresa'];
+    $Email = $_POST['Email'];
+    $DatosEmpresa = new empresaDatos();
+    $Resultado = $DatosEmpresa->ActualizaEmpresa($IdEmpresa, $NombreEmpresa, $Email);
+    if($Resultado==1){
+        echo 'Registro Actualizado';
+    }
 }
-elseif(isset($_POST['Borrar'])){
-    echo 'Borrar';
+else if(isset($_POST['Borrar'])){
+    $IdEmpresa = $_POST['IdEmpresa'];
+    $DatosEmpresa = new empresaDatos();
+    $Resultado = $DatosEmpresa->EliminaEmpresa($IdEmpresa);
+    if($Resultado==1){
+        echo 'Se elimino el registro de la empresa, sus reclutas y metas';
+    }
 }
-
-
 

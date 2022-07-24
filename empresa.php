@@ -9,20 +9,7 @@
        ?>
         <div class="center">
             <div class="Secccion Contiene-Nuevo">
-                <table>
-                    <tr>
-                        <th>Empresa</th>
-                        <th>Correo Electronico</th>
-                        <th></th>
-                    </tr>
-                    <form action="">
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="submit" name="brn-atc" value="Agregar +"></td>
-                    </tr>
-                    </form>
-                </table>
+                <?php include('Vista/empresaAlta.php');?>
             </div>
             <div class="Secccion Contiene-Busqueda">
                 <?php include('Componentes/busqueda.php');?>

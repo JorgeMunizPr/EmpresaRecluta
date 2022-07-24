@@ -12,24 +12,7 @@
        ?>
         <div class="center">
             <div class="Secccion Contiene-Nuevo">
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Empresa</th>
-                        <th>Telefono</th>
-                        <th>Puesto</th>
-                        <th></th>
-                    </tr>
-                    <form action="">
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="submit" name="brn-atc" value="Agregar +"></td>
-                    </tr>
-                    </form>
-                </table>
+            <?php include('Vista/reclutaAlta.php');?>
             </div>
             <div class="Secccion Contiene-Busqueda">
                 <?php include('Componentes/busqueda.php');?>

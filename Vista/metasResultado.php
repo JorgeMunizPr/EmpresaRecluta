@@ -1,6 +1,6 @@
 <?php
 
-include('LecturaSolicitud/metasSolicitud.php');
+require_once('LecturaSolicitud/metasSolicitud.php');
 
 $HtmlResultado='';
 if(isset($_GET['nombre'])){
@@ -22,8 +22,8 @@ if(isset($_GET['nombre'])){
 
             $HtmlResultado = $HtmlResultado.'
             <tr>
-                <td><input type="text" name="NombreEmpresa" value="'.$NombreEmpresa.'"></td>
-                <td><input type="text" name="MetasMes" value="'.$MetasMes.'"></td>
+                <td>'.$NombreEmpresa.'</td>
+                <td><input type="text" maxlength=40 name="MetasMes" value="'.$MetasMes.'" required></td>
                 <td>
                     <input type="hidden" name="IdMeta" value="'.$IdMeta.'">                    
                     <input type="submit" name="Guardar" value="Guardar">
@@ -35,8 +35,23 @@ if(isset($_GET['nombre'])){
         $HtmlResultado = $HtmlResultado.'</table></form>';
     }
 
+    echo $HtmlResultado;
+
 }
-
-
-
-echo $HtmlResultado;
+elseif(isset($_POST['Guardar'])){
+    $IdMeta = $_POST['IdMeta'];
+    $MetasMes = $_POST['MetasMes'];
+    $DatosMeta = new metasDatos();
+    $Resultado = $DatosMeta->ActualizaMeta($IdMeta, $MetasMes);
+    if($Resultado==1){
+        echo 'Registro Actualizado';
+    }
+}
+elseif(isset($_POST['Borrar'])){
+    $IdMeta = $_POST['IdMeta'];
+    $DatosMeta = new metasDatos();
+    $Resultado = $DatosMeta->EliminaMeta($IdMeta);
+    if($Resultado==1){
+        echo 'Se elimino el registro de la metas';
+    }
+}
