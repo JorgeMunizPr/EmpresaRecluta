@@ -3,41 +3,24 @@
     <head>
         <!--Titulo de la pestaña-->
         <title>Reclutas</title>
-        <link rel="stylesheet" href="css/reclutas.css"><!--Conexion con archivo css para dar diseño al html-->
+        <link rel="icon" href="css/brazil-flag.ico">
     </head>
     <!--Cuerpo de la pagina-->
     <body>
-    <?php
-       include('Componentes/Menu.php');
-
-       $sql = 'SELECT nomb_reclu, id_empresa, telefono, puesto FROM reclutas';
-
-       include('Componentes/Connect.php');
+        <?php 
+            include('Componentes/Menu.php');
        ?>
         <div class="center">
-            <table>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Empresa</th>
-                    <th>Telefono</th>
-                    <th>Puesto</th>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                </tr>
-                <?php while ($row =$q ->fetch()): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['nomb_reclu'])?></td>
-                    <td><?php echo htmlspecialchars($row['id_empresa'])?></td>
-                    <td><?php echo htmlspecialchars($row['telefono'])?></td>
-                    <td><?php echo htmlspecialchars($row['puesto']) ?></td>
-                </tr>
-                <?php endwhile; ?>
-            </table>
-            <button>Agregar+</button>
+            <div class="Secccion Contiene-Nuevo">
+            <?php include('Vista/reclutaAlta.php');?>
+            </div>
+            <div class="Secccion Contiene-Busqueda">
+                <?php include('Componentes/busqueda.php');?>
+            </div>
+            <div class="Secccion Contiene-Resultados">
+                <?php include('Vista/reclutasResultado.php');?>
+            </div>
+            <!--Boton para mandar la informacion ingresada en la tabla, al servidor para asi registrarla-->
         </div>
     </body>
 </html>

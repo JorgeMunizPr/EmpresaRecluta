@@ -1,38 +1,22 @@
-/*10/07/2022*/
-/*Alineamos los elementos del menu al centro y establecemos el fondo de la division de color gris*/
-.menu-bar
-{
-    text-align: center;
-    background-color: gray;
-}
-
-/*Alineamos la lista de opciones respecto a la divisio en forma horizontal y removemos el formato de listado*/
-.menu-bar ul
-{
-    display: inline-flex;
-    list-style: none;
-    color: #fff;
-}
-
+/*23/07/2022*/
 /*Al dar un link a cualquier elemenoto, las letras dentro de este automaticamente se tornan moradas con subrayado*/
 /*Aqui lo que hacemos es remover el subrayado y dar un color blanco a las letras para que el diseño sea mas limpio*/
-.menu-bar ul a 
+.nav-link
 {
-    text-decoration: none;
-    color: #fff;
+    /*position: relative;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/*Cada opcion(Reporte y reclutar) de la lista tendra anchura, margen y relleno establecidos aqui*/
-.menu-bar ul a li
+ul
 {
-    width: 120px;
-    margin: 15px;
-    padding: 15px;
+    height: 50px;
 }
 
 /*Al pasar por encima de cada opcion, el fondo de este se cambiara a negro para resaltar la opcion*/
 /*La clase active fue asignada a la opcion que representa la pagina donde estamos, la cual esatra resaltado de negro como aqui especifica*/
-.active, .menu-bar ul li:hover
+.nav-link:hover
 {
     background: #252525;
     border-radius: 3pxs;
