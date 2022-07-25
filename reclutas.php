@@ -3,7 +3,7 @@
     <head>
         <!--Titulo de la pestaña-->
         <title>Reclutas</title>
-       
+        <link rel="icon" href="css/brazil-flag.ico">
     </head>
     <!--Cuerpo de la pagina-->
     <body>

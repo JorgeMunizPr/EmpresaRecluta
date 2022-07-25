@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Empresa</title>
+        <link rel="icon" href="css/brazil-flag.ico">
     </head>
     <body>
        <?php 

@@ -4,6 +4,7 @@
         <!--Titulo de la pestaña--> 
         <title>Login</title>
         <link rel="stylesheet" href="css/index.css"><!--Conexion con archivo css para dar diseño al html-->
+        <link rel="icon" href="css/brazil-flag.ico">
     </head>
     <!--Cuerpo de la pagina-->
     <body>

@@ -14,9 +14,9 @@ else{
 function validaInicioSesion($Usuario, $ContraS){
 
     $serverName = "localhost";
-    $database = "administracion";
-    $userName="gestor";
-    $passUser="secreto";
+    $database = "id19301210_administracion";
+    $userName="id19301210_cris";
+    $passUser="r!pHV~vKjlTNu4S[";
     
     $conn = new PDO("mysql:host=$serverName;dbname=$database;charset=utf8mb4", $userName, $passUser);
     
