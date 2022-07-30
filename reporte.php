@@ -2,29 +2,24 @@
 <html>
     <head>
         <!--Titulo de la pestaña--> 
-        <title>Menu</title>
+        <title>Reporte</title>
         <link rel="icon" href="css/brazil-flag.ico">
     </head>
     <!--Cuerpo de la pagina-->
     <body>
-    <?php
-       include('Componentes/Menu.php');
-       $sql = 'SELECT nom_empr FROM empresas';
-       include('Componentes/Connect.php');
-       ?>
+        <?php
+            include('Componentes/Menu.php');
+        ?>
 
-        <div class="seleccion">
-            <label for="">Seleccione empresa</label>
-            <select name="" id="">
-                <?php while ($row =$q ->fetch()): ?>
-                    <option><?php echo htmlspecialchars($row['nom_empr'])?></option>
-                <?php endwhile; ?>
-            </select>
-            <button>Generar reporte</button>
+        <div class="center Pag-Reportes">
+            <div class="Secccion Contiene-Busqueda">
+                <?php include('Vista/reporteBusqueda.php');?>
+            </div>
+            <div class="Secccion">
+                <?php include('Vista/reporteResultado.php');?>
+            </div>
         </div>
-        <div class="informacion">
-            <P>La empresa tienen vacantes disponibles, este mes se reclutaron vacanntes, la meta es de reclutas</P>
-        </div>
+        
     </body>
 </html>
 <!---->

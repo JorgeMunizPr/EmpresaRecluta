@@ -17,14 +17,6 @@ table
 {
     display: flex;
     justify-content: center;
-    
-    /*
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    */
 }
 
 /*Alineamos el texto del encabezado a la izquierda*/
@@ -67,4 +59,31 @@ th, td
 
 .RespuestaAlmacena{
     height: 50px;
+}
+
+.mr-1 {
+    margin-right: 8px !important;
+}
+
+.Pag-Reportes .Contiene-Resultados{
+    background-color: #fffaf0;
+    padding: 60px 20px 90px;
+    border-radius: 8px;
+    border: 1px solid #f7dfaf;
+}
+
+.Seccion-Reporte .row{
+    padding-bottom: 8px;
+    border-bottom: 1px solid #c3c3c3;
+}
+
+.Titulo-Reporte{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+}
+
+.Reporte span{
+    font-weight: bold;
 }

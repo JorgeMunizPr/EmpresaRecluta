@@ -8,12 +8,6 @@
     </head>
     <!--Cuerpo de la pagina-->
     <body>
-     <!--Ingresamos el menu en la parte superior de la pagina-->   
-        <a href="registro.php">
-            <p>No tienes cuenta? Registrate aqui¡</p>
-        </a>
-        <!--Division que contendra los elementos(Titulo y cuerpo) del formulario-->
-        <!--Asiganar class a los elementos sirve para identificarlos en el css y poder dar un diseño especifico-->
         <div class="center">
             <!--Encabezado-->
             <h1>Login</h1>

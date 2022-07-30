@@ -13,7 +13,7 @@ if(isset($_GET['nombre'])){
     else{
         $HtmlResultado = $HtmlResultado.'
         <form method="post" action="metas.php">
-            <table><tr><th>Empresa</th><th>Metas x Mes</th><th></th></tr>';
+            <table><tr><th>Empresa</th><th>Reclutas x Mes</th><th></th></tr>';
         for ($i=0; $i < sizeof($ResultadoBusqueda); $i++) { 
             $IdMeta = $ResultadoBusqueda[$i]['id_metas'];
             $NombreEmpresa = $ResultadoBusqueda[$i]['nom_empr'];

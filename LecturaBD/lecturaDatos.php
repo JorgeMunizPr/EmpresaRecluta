@@ -34,7 +34,8 @@ class lecturaBD{
         $Query="
 		select id_reclutas, nomb_reclu AS Nombre, b.nom_empr , telefono, puesto from reclutas a
 		join empresas b ON a.id_empresa=b.id_empresa
-		where nomb_reclu like '%$NombreBuscada%';
+		where nomb_reclu like '%$NombreBuscada%'
+		limit 1;
 		";
         $resultQuery = $this->conn->prepare($Query);
 		$resultQuery->execute();
@@ -82,13 +83,61 @@ class lecturaBD{
 			if($resultQuery->rowCount() > 0){
 				$resultDatos = $resultQuery->fetchAll(PDO::FETCH_ASSOC);
 				return $resultDatos;
-			}else
-				return 'Vacio';
+			}
 		}
 		else{
 			return NULL;
 		}
     }
+	//Lectura listado de indicadores
+	public function lecturaIndicadorBD(){
+		$Query="select 
+		a.nom_empr, ifnull(c.metas_mes,0) as meta_mes, 
+		ifnull(b.num_reclutas,0) AS num_reclutas
+		from empresas a
+		left join metas c ON a.id_empresa=c.id_empresa
+		left join(select id_empresa, count(*) AS num_reclutas from reclutas
+		group by id_empresa)b ON a.id_empresa=b.id_empresa;";
+        $resultQuery = $this->conn->prepare($Query);
+		$resultQuery->execute();
+		// check if succesful
+		if($resultQuery){			
+			if($resultQuery->rowCount() > 0){
+				$resultDatos = $resultQuery->fetchAll(PDO::FETCH_ASSOC);
+				return $resultDatos;
+			}
+		}
+		else{
+			return NULL;
+		}
+	}
+	//Lectura listado de indicadores
+	public function buscarInfoReporteBD($IdEmpresa){
+		$Query="select 
+		a.nom_empr, ifnull(c.metas_mes,0) as meta_mes, 
+		ifnull(b.NumReclutas,0) AS num_reclutas,
+		case when ifnull(c.metas_mes,0)-ifnull(b.NumReclutas,0)<0 then 0 
+			 else ifnull(c.metas_mes,0)-ifnull(b.NumReclutas,0) end AS vacantes_disponibles
+		from empresas a
+		left join metas c ON a.id_empresa=c.id_empresa
+		left join(select id_empresa, count(*) AS NumReclutas from reclutas
+		group by id_empresa)b ON a.id_empresa=b.id_empresa
+		where a.id_empresa='$IdEmpresa';";
+        $resultQuery = $this->conn->prepare($Query);
+		$resultQuery->execute();
+		// check if succesful
+		if($resultQuery){			
+			if($resultQuery->rowCount() > 0){
+				$resultDatos = $resultQuery->fetchAll(PDO::FETCH_ASSOC);
+				return $resultDatos;
+			}
+		}
+		else{
+			return NULL;
+		}
+	}
+
+	
 	/** ACTUALIZACION **/
 	//actualiza registro empresa
     public function actualizaEmpresaBD($IdEmpresa, $NombreEmpresa, $Email){

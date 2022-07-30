@@ -27,7 +27,7 @@ function tablaAltaMeta($RespuestaAlta=''){
     <table>
         <tr>
             <th>Empresa</th>
-            <th>Metas x Mes</th>
+            <th>Reclutas x Mes</th>
             <th></th>
         </tr>
         <form method="POST">
@@ -42,7 +42,7 @@ function tablaAltaMeta($RespuestaAlta=''){
                 $HtmlResultado=$HtmlResultado.
                 '</select>
                 </td>
-                <td><input class="form-control" type="text" maxlength=40 name="MetasMes"></td>
+                <td><input class="form-control" type="text" pattern="\d*" maxlength=8 name="MetasMes" placeholder="Cantidad de reclutas"></td>
                 <td><input class="btn btn-primary" type="submit" name="AgregaMeta" value="Agregar +"></td>
             </tr>
         </form>
