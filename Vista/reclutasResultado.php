@@ -29,7 +29,7 @@ if(isset($_GET['nombre'])){
                 <td><input class="form-control" type="text" maxlength=30 name="Puesto" value="'.$Puesto.'" required></td>
                 <td>
                     <input type="hidden" name="IdRecluta" value="'.$IdRecluta.'">                    
-                    <input class="btn btn-primary" type="submit" name="Guardar" value="Guardar">
+                    <input class="btn btn-primary" type="submit" name="Guardar" value="Modificar">
                     <input class="btn btn-primary" type="submit" name="Borrar" value="Eliminar">
                 </td>
             </tr>';

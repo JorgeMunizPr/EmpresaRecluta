@@ -244,7 +244,7 @@ class lecturaBD{
 	
 	//elimina registro meta
     public function eliminaReclutaBD($IdRecluta){
-        $Query="delete from metas where id_reclutas='$IdRecluta'";
+        $Query="delete from reclutas where id_reclutas='$IdRecluta'";
         $resultQuery = $this->conn->prepare($Query);
 		$resultQuery->execute();
 		// check if succesful

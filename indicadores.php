@@ -59,14 +59,14 @@
 
             series: [{
                 name: 'Meta',
-                color: 'rgba(165,170,217,1)',
+                color: '#d70026',
                 data: [<?php echo $sListaMetas; ?>],
                 pointPadding: 0.25,
                 pointPlacement: 0
             }, {
                 name: 'Reclutas',
                 data: [<?php echo $sListaReclutas; ?>],
-                color: 'rgba(126,86,134,.9)',
+                color: '#4ceb2c',
                 pointPadding: 0.3,
                 pointPlacement: 0
             }]

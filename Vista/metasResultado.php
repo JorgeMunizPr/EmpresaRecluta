@@ -26,7 +26,7 @@ if(isset($_GET['nombre'])){
                 <td><input class="form-control" type="text" maxlength=40 name="MetasMes" value="'.$MetasMes.'" required></td>
                 <td>
                     <input class="btn btn-primary" type="hidden" name="IdMeta" value="'.$IdMeta.'">                    
-                    <input class="btn btn-primary" type="submit" name="Guardar" value="Guardar">
+                    <input class="btn btn-primary" type="submit" name="Guardar" value="Modificar">
                     <input class="btn btn-primary" type="submit" name="Borrar" value="Eliminar">
                 </td>
             </tr>';

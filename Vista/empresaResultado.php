@@ -24,7 +24,7 @@ if(isset($_GET['nombre'])){
                 <td><input class="form-control" type="text" maxlength=50 name="Email" value="'.$Email.'" required></td>
                 <td>
                     <input class="btn btn-primary" type="hidden" name="IdEmpresa" value="'.$IdEmpresa.'">                    
-                    <input class="btn btn-primary" type="submit" name="Guardar" value="Guardar">
+                    <input class="btn btn-primary" type="submit" name="Guardar" value="Modificar">
                     <input class="btn btn-primary" type="submit" name="Borrar" value="Eliminar">
                 </td>
             </tr>';
