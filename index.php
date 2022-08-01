@@ -15,10 +15,10 @@
         <div class="card bg-dark text-white" style="border-radius: 1rem;">
           <div class="card-body p-4 text-center">
 
-            <form class="mb-md-5 mt-md-4 pb-5" method = "post" action="LecturaSolicitud/inicioSesion.php">
+            <form class="mb-md-1 mt-md-1 pb-5" method = "post" action="LecturaSolicitud/inicioSesion.php">
 
               <h2 class="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
-              <p class="text-white-50 mb-5">Ingresa tu usuario y contraseña!</p>
+              <p class="text-white-50 mb-3">Ingresa tu usuario y contraseña!</p>
 
               <div class="form-outline form-white mb-4">
                 <input type="text" name="form_usuario" class="form-control form-control-lg" required>
@@ -39,7 +39,14 @@
                 <a href="registro.php" class="text-white-50 fw-bold">Registrate</a>
               </p>
             </div>
-
+            <?php
+              if(isset($_GET['exito']) && $_GET['exito']==1){
+                echo '<span class= "badge bg-success">Usuario Registrado</span>';
+              }
+              else if(isset($_GET['error']) && $_GET['error']==1){
+                echo '<span class= "badge bg-danger">Usuario o contraseña incorrecto</span>';
+              }
+            ?>
           </div>
         </div>
       </div>

@@ -6,7 +6,11 @@
      margin: 0;
      padding: 0;
      height: 100vh;
-     background-color: #adadad;
+     /* background-color: #adadad; */
+     background-image: url("../Images/backgroun-image-web.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover; /* Resize the background image to cover the entire container */
  }
  
  /*la clase center es la referencia al elemento que contiene todo el formulario incluyendo el titulo(login)*/
